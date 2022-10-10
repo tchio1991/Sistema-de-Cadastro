@@ -29,7 +29,17 @@ namespace Sistema_de_Cadastro
             this.Validate();
             this.clientesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dados_das_pessoasDataSet);
+            MessageBox.Show("Contato Salvo com Sucesso");
+        }
 
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contato Excluido");
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Id adicionado");
         }
     }
 }

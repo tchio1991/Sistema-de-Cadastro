@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label idLabel;
             System.Windows.Forms.Label nomeLabel;
             System.Windows.Forms.Label endereçoLabel;
             System.Windows.Forms.Label e_mail_Label;
             System.Windows.Forms.Label telefoneLabel;
             System.Windows.Forms.Label cliente_Label;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dados_das_pessoasDataSet = new Sistema_de_Cadastro.Dados_das_pessoasDataSet();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientesTableAdapter = new Sistema_de_Cadastro.Dados_das_pessoasDataSetTableAdapters.ClientesTableAdapter();
@@ -70,6 +70,66 @@
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingNavigator)).BeginInit();
             this.clientesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // idLabel
+            // 
+            idLabel.AutoSize = true;
+            idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idLabel.Location = new System.Drawing.Point(87, 40);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(24, 16);
+            idLabel.TabIndex = 1;
+            idLabel.Text = "Id:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomeLabel.Location = new System.Drawing.Point(57, 66);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(52, 16);
+            nomeLabel.TabIndex = 3;
+            nomeLabel.Text = "Nome:";
+            // 
+            // endereçoLabel
+            // 
+            endereçoLabel.AutoSize = true;
+            endereçoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            endereçoLabel.Location = new System.Drawing.Point(32, 93);
+            endereçoLabel.Name = "endereçoLabel";
+            endereçoLabel.Size = new System.Drawing.Size(78, 16);
+            endereçoLabel.TabIndex = 5;
+            endereçoLabel.Text = "Endereço:";
+            // 
+            // e_mail_Label
+            // 
+            e_mail_Label.AutoSize = true;
+            e_mail_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            e_mail_Label.Location = new System.Drawing.Point(47, 119);
+            e_mail_Label.Name = "e_mail_Label";
+            e_mail_Label.Size = new System.Drawing.Size(59, 16);
+            e_mail_Label.TabIndex = 7;
+            e_mail_Label.Text = "E-mail :";
+            // 
+            // telefoneLabel
+            // 
+            telefoneLabel.AutoSize = true;
+            telefoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telefoneLabel.Location = new System.Drawing.Point(36, 145);
+            telefoneLabel.Name = "telefoneLabel";
+            telefoneLabel.Size = new System.Drawing.Size(73, 16);
+            telefoneLabel.TabIndex = 9;
+            telefoneLabel.Text = "Telefone:";
+            // 
+            // cliente_Label
+            // 
+            cliente_Label.AutoSize = true;
+            cliente_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cliente_Label.Location = new System.Drawing.Point(43, 173);
+            cliente_Label.Name = "cliente_Label";
+            cliente_Label.Size = new System.Drawing.Size(63, 16);
+            cliente_Label.TabIndex = 11;
+            cliente_Label.Text = "Cliente :";
             // 
             // dados_das_pessoasDataSet
             // 
@@ -129,6 +189,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -145,6 +206,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -216,16 +278,6 @@
             this.clientesBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.clientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.clientesBindingNavigatorSaveItem_Click);
             // 
-            // idLabel
-            // 
-            idLabel.AutoSize = true;
-            idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(87, 40);
-            idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(24, 16);
-            idLabel.TabIndex = 1;
-            idLabel.Text = "Id:";
-            // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Id", true));
@@ -234,16 +286,6 @@
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(41, 20);
             this.idTextBox.TabIndex = 2;
-            // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomeLabel.Location = new System.Drawing.Point(57, 66);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(52, 16);
-            nomeLabel.TabIndex = 3;
-            nomeLabel.Text = "Nome:";
             // 
             // nomeTextBox
             // 
@@ -254,16 +296,6 @@
             this.nomeTextBox.Size = new System.Drawing.Size(260, 21);
             this.nomeTextBox.TabIndex = 4;
             // 
-            // endereçoLabel
-            // 
-            endereçoLabel.AutoSize = true;
-            endereçoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            endereçoLabel.Location = new System.Drawing.Point(32, 93);
-            endereçoLabel.Name = "endereçoLabel";
-            endereçoLabel.Size = new System.Drawing.Size(78, 16);
-            endereçoLabel.TabIndex = 5;
-            endereçoLabel.Text = "Endereço:";
-            // 
             // endereçoTextBox
             // 
             this.endereçoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Endereço", true));
@@ -272,16 +304,6 @@
             this.endereçoTextBox.Name = "endereçoTextBox";
             this.endereçoTextBox.Size = new System.Drawing.Size(258, 20);
             this.endereçoTextBox.TabIndex = 6;
-            // 
-            // e_mail_Label
-            // 
-            e_mail_Label.AutoSize = true;
-            e_mail_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            e_mail_Label.Location = new System.Drawing.Point(47, 119);
-            e_mail_Label.Name = "e_mail_Label";
-            e_mail_Label.Size = new System.Drawing.Size(59, 16);
-            e_mail_Label.TabIndex = 7;
-            e_mail_Label.Text = "E-mail :";
             // 
             // e_mail_TextBox
             // 
@@ -292,16 +314,6 @@
             this.e_mail_TextBox.Size = new System.Drawing.Size(258, 20);
             this.e_mail_TextBox.TabIndex = 8;
             // 
-            // telefoneLabel
-            // 
-            telefoneLabel.AutoSize = true;
-            telefoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            telefoneLabel.Location = new System.Drawing.Point(36, 145);
-            telefoneLabel.Name = "telefoneLabel";
-            telefoneLabel.Size = new System.Drawing.Size(73, 16);
-            telefoneLabel.TabIndex = 9;
-            telefoneLabel.Text = "Telefone:";
-            // 
             // telefoneTextBox
             // 
             this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefone", true));
@@ -309,16 +321,6 @@
             this.telefoneTextBox.Name = "telefoneTextBox";
             this.telefoneTextBox.Size = new System.Drawing.Size(258, 20);
             this.telefoneTextBox.TabIndex = 10;
-            // 
-            // cliente_Label
-            // 
-            cliente_Label.AutoSize = true;
-            cliente_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cliente_Label.Location = new System.Drawing.Point(43, 173);
-            cliente_Label.Name = "cliente_Label";
-            cliente_Label.Size = new System.Drawing.Size(63, 16);
-            cliente_Label.TabIndex = 11;
-            cliente_Label.Text = "Cliente :";
             // 
             // cliente_CheckBox
             // 
@@ -349,7 +351,10 @@
             this.Controls.Add(idLabel);
             this.Controls.Add(this.idTextBox);
             this.Controls.Add(this.clientesBindingNavigator);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dados_das_pessoasDataSet)).EndInit();
